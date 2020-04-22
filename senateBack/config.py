@@ -14,7 +14,7 @@ class DbEngine_config():
     DB_PASS = os.environ.get('DB_PASS') or 'postgres'
     DB_NAME = os.environ.get('DB_NAME') or 'senateDB'
     if int(os.environ.get('APP_HEROKU')) == 1:
-        DB_URL = "postgres://buqljeciiourcf:8d5e087dd3d2beb39803b56773ff0ab08967dab3e99a1dc3d40e23dc6bbe9bd8@ec2-107-21-101-177.compute-1.amazonaws.com:5432/db1deb1elaluet"
+        DB_URL = os.environ.get('DATABASE_URL')
     else:
         DB_URL = f'{DB_DIALECT}://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}'
 
